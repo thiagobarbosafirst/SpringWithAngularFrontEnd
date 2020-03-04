@@ -1,0 +1,11 @@
+.notificacao {
+    &.alert-success {
+        background-color: #1dc9b7;
+        border: 1px solid #1dc9b7;
+        color: #fff;
+    }
+    .close {
+        color: #fff;
+        opacity: initial;
+    }
+}

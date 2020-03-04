@@ -1,0 +1,7 @@
+<div role="alert" *ngFor="let notificacao of notificacoes"
+   class="alert {{obterClassTipoMensagem(notificacao)}} alert-dismissible fade show notificacao">
+    <span >{{notificacao.message}}</span>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="removeNotificacao()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>

@@ -1,0 +1,58 @@
+<div class="card">
+  <div class="card-header title-card">
+      <i class="fas fa-exchange-alt"></i>
+      Transfêrencia
+  </div>
+  <div class="card-body">
+        <div class="row">
+          <div class="form-group col-md-4">
+              <label for="'contaOrigem'">Conta Origem</label>
+              <input type="contaOrigem" class="form-control" id="contaOrigem" placeholder="Conta Origem"  [(ngModel)]="transferencia.contaOrigem.chavePrimaria.id" mask="0*">
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="tipoConta" id="poupanca" [value]="tipoContaEnum.POUPANCA" [(ngModel)]="transferencia.contaOrigem.chavePrimaria.tipoConta">
+            <label class="form-check-label" for="poupanca">Poupança</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="tipoConta" id="corrente"  [value]="tipoContaEnum.CORRENTE" [(ngModel)]="transferencia.contaOrigem.chavePrimaria.tipoConta">
+            <label class="form-check-label" for="corrente">Corrente</label>
+          </div>
+         
+      </div>
+      <div class="row">
+          <div class="form-group col-md-4">
+              <label for="conta">Conta Destino</label>
+              <input type="conta" class="form-control" id="conta" placeholder="Conta Destino"  [(ngModel)]="transferencia.contaDestino.chavePrimaria.id" mask="0*" >
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="tipoContaDestino" id="poupanca" [value]="tipoContaEnum.POUPANCA" [(ngModel)]="transferencia.contaDestino.chavePrimaria.tipoConta">
+            <label class="form-check-label" for="poupanca">Poupança</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="tipoContaDestino" id="corrente"  [value]="tipoContaEnum.CORRENTE"  [(ngModel)]="transferencia.contaDestino.chavePrimaria.tipoConta">
+            <label class="form-check-label" for="corrente">Corrente</label>
+          </div>
+      </div>
+      <div class="row">
+          <div class="form-group col-md-4">
+              <label for="valor">Valor</label>
+              <input type="valor" class="form-control" id="valor" placeholder="Valor"  [(ngModel)]="transferencia.valor" prefix="R$ " mask="separator.2" thousandSeparator="," >
+          </div>
+      </div>
+      
+      <div class="btn-right">
+          <button type="button" class="btn btn-outline-secondary" [routerLink]="['/operacoes-bancarias']">
+              <i class="fas fa-arrow-left"></i>
+              Voltar
+          </button>
+          <button type="button" class="btn btn-outline-secondary" (click)="limpar()">
+              <i class="fa fa-trash"></i>
+              Limpar
+          </button>
+          <button type="submit" class="btn btn-primary" (click)="salvar()">
+              <i class="fa fa-save"></i>
+              Salvar
+          </button>
+      </div>
+  </div>
+</div>

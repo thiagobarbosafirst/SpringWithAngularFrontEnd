@@ -1,0 +1,43 @@
+<div class="card">
+  <div class="card-header title-card">
+      <i class="fas fa-receipt"></i>
+      Saque
+  </div>
+  <div class="card-body">
+      <div class="row">
+          <div class="form-group col-md-4">
+              <label for="conta">Conta</label>
+              <input type="conta" class="form-control" id="conta" placeholder="Conta" [(ngModel)]="saque.conta.chavePrimaria.id" mask="0*">
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="tipoConta" id="poupanca" [value]="tipoContaEnum.POUPANCA" [(ngModel)]="saque.conta.chavePrimaria.tipoConta">
+            <label class="form-check-label" for="poupanca">Poupança</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="tipoConta" id="corrente" [value]="tipoContaEnum.CORRENTE" [(ngModel)]="saque.conta.chavePrimaria.tipoConta">
+            <label class="form-check-label" for="corrente">Corrente</label>
+          </div>
+      </div>
+      <div class="row">
+          <div class="form-group col-md-4">
+              <label for="valor">Valor</label>
+              <input type="valor" class="form-control" id="valor" placeholder="Valor" [(ngModel)]="saque.valor" prefix="R$ " mask="separator.2" thousandSeparator=",">
+          </div>
+      </div>
+      
+      <div class="btn-right">
+          <button type="button" class="btn btn-outline-secondary" [routerLink]="['/operacoes-bancarias']">
+              <i class="fas fa-arrow-left"></i>
+              Voltar
+          </button>
+          <button type="button" class="btn btn-outline-secondary" (click)="limpar()">
+              <i class="fa fa-trash"></i>
+              Limpar
+          </button>
+          <button type="submit" class="btn btn-primary" (click)="salvar()">
+              <i class="fa fa-save"></i>
+              Salvar
+          </button>
+      </div>
+  </div>
+</div>
